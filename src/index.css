@@ -1,0 +1,138 @@
+@import "tailwindcss";
+@import "./styles/tokens.css";
+
+@theme inline {
+  --color-canvas: var(--bg-canvas);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-column: var(--column);
+  --color-column-active: var(--column-active);
+  --color-neutral: var(--neutral);
+  --color-neutral-hover: var(--neutral-hover);
+
+  --color-ink: var(--ink-900);
+  --color-ink-700: var(--ink-700);
+  --color-ink-500: var(--ink-500);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-pressed: var(--brand-pressed);
+  --color-brand-subtle: var(--brand-subtle);
+
+  --color-todo: var(--todo-bg);
+  --color-todo-ink: var(--todo-fg);
+  --color-progress: var(--progress-bg);
+  --color-progress-ink: var(--progress-fg);
+  --color-done: var(--done-bg);
+  --color-done-ink: var(--done-fg);
+
+  --color-priority-high: var(--priority-high);
+  --color-priority-medium: var(--priority-medium);
+  --color-priority-low: var(--priority-low);
+
+  --color-danger: var(--danger);
+  --color-danger-hover: var(--danger-hover);
+  --color-danger-subtle: var(--danger-subtle);
+  --color-danger-text: var(--danger-text);
+  --color-warning-subtle: var(--warning-subtle);
+  --color-warning-text: var(--warning-text);
+  --color-success: var(--success);
+  --color-highlight: var(--highlight);
+
+  --radius-chip: var(--chip-radius);
+  --radius-control: var(--control-radius);
+  --radius-card: var(--card-radius);
+  --radius-column: var(--column-radius);
+  --radius-dialog: var(--dialog-radius);
+
+  --shadow-card: var(--card-shadow);
+  --shadow-raised: var(--raised-shadow);
+  --shadow-overlay: var(--overlay-shadow);
+
+  --font-sans: var(--font-body);
+}
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-canvas);
+  color: var(--ink-900);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.43;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+dialog::backdrop {
+  background: rgb(9 30 66 / 0.54);
+}
+
+/* Subtle dotted grid behind the board columns. */
+.dot-grid {
+  background-image: radial-gradient(var(--dot-grid) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Thin, quiet scrollbars inside columns and the board. */
+.thin-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neutral-hover) transparent;
+}
+
+/* =========================
+   MOTION
+========================= */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 240ms var(--ease-out) both;
+}
+
+.animate-pop-in {
+  animation: pop-in 140ms var(--ease-out) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

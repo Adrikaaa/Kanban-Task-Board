@@ -1,0 +1,71 @@
+/*
+  Design tokens, modelled on Jira's board view. Components only use these
+  through var(--...) or the Tailwind aliases defined in index.css.
+  Text colours were checked for WCAG AA (4.5:1) against --surface and --column.
+*/
+
+:root {
+  color-scheme: light;
+
+  /* Surfaces */
+  --bg-canvas: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #f7f8f9;
+  --column: #f1f2f4;
+  --column-active: #e9f2ff;
+  --neutral: #ebecf0;
+  --neutral-hover: #dcdfe4;
+  --dot-grid: #dcdfe4;
+
+  /* Text */
+  --ink-900: #172b4d;
+  --ink-700: #44546f;
+  --ink-500: #5e6c84;
+  --line: #dcdfe4;
+  --line-strong: #8590a2;
+
+  /* Brand blue */
+  --brand: #0c66e4;
+  --brand-hover: #0055cc;
+  --brand-pressed: #09326c;
+  --brand-subtle: #e9f2ff;
+
+  /* Status lozenges (bg / fg) */
+  --todo-bg: #dfe1e6;
+  --todo-fg: #44546f;
+  --progress-bg: #cce0ff;
+  --progress-fg: #0055cc;
+  --done-bg: #baf3db;
+  --done-fg: #216e4e;
+
+  /* Priority icons */
+  --priority-high: #c9372c;
+  --priority-medium: #b65c02;
+  --priority-low: #1d7afc;
+
+  /* Feedback */
+  --danger: #c9372c;
+  --danger-hover: #ae2e24;
+  --danger-subtle: #ffeceb;
+  --danger-text: #ae2e24;
+  --warning-subtle: #fff7d6;
+  --warning-text: #a54800;
+  --success: #22a06b;
+  --highlight: #f8e6a0;
+
+  --focus-ring: 0 0 0 2px #ffffff, 0 0 0 4px #388bff;
+
+  --card-shadow: 0 1px 1px rgba(9, 30, 66, 0.25), 0 0 1px rgba(9, 30, 66, 0.31);
+  --raised-shadow: 0 4px 8px -2px rgba(9, 30, 66, 0.25), 0 0 1px rgba(9, 30, 66, 0.31);
+  --overlay-shadow: 0 8px 12px rgba(9, 30, 66, 0.15), 0 0 1px rgba(9, 30, 66, 0.31);
+
+  --chip-radius: 4px;
+  --control-radius: 6px;
+  --card-radius: 8px;
+  --column-radius: 10px;
+  --dialog-radius: 12px;
+
+  --font-body: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
